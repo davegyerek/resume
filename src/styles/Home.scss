@@ -1,0 +1,132 @@
+@import 'mixins';
+
+$main-color: #67B26F;
+$main-color-2: #4ca2cd;
+$secondary-color: #e9eced;
+
+body {
+  background-color: $secondary-color;
+}
+
+.header-content {
+  @include gradient-background($main-color, $main-color-2);
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+
+.title-center-content {
+  @include translate-y(-50%);
+  position: relative;
+  width: 100%;
+  top: 50vh;
+  left: 0;
+}
+
+.title-text {
+  @include translate-y(-50%);
+  position: relative;
+  padding: 0 4.5rem 0 0;
+  top: 229px;
+}
+
+.header-container {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.5s !important;
+}
+
+.header-container.done {
+  height: 0;
+}
+
+.header-container,
+.header-container .trapeze-bg,
+.header-container img,
+.header-container .header-content .title-resume span {
+  transition: all 0.3s linear;
+}
+
+.trapeze-bg {
+  @include skew-x(-7deg);
+  position: absolute;
+  left: -15%;
+  width: 65%;
+  height: 100vh;
+  background-color: $secondary-color;
+  transition: all 0.3s linear, height 0.3s linear 0.5s !important;
+}
+
+.header-container .header-content .title-resume span {
+  @include rotate-deg(-90deg);
+  position: absolute;
+  left: 60%;
+  top: 72px;
+  margin-top: 9rem;
+  font-size: 7.451rem;
+  line-height: 6rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: $secondary-color;
+  opacity: 0.15;
+  cursor: default;
+  z-index: 1;
+}
+
+.done {
+  .trapeze-bg {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: $secondary-color;
+    transform: none;
+  }
+
+  img {
+    opacity: 0;
+  }
+}
+
+.done.header-container .header-content .title-resume span {
+  color: $secondary-color;
+}
+
+.title-resume {
+  img {
+    display: inline;
+  }
+  div {
+    margin-left: -60px;
+    ul {
+      margin-top: 20px;
+      li {
+        display: inline;
+        margin: 10px;
+        a {
+          color: $secondary-color;
+          opacity: 0.8;
+          font-size: x-large;
+        }
+      }
+    }
+  }
+}
+
+.info-resume {
+  h1 {
+    color: $main-color;
+  }
+  .divider {
+    @include gradient-background($main-color, $main-color-2);
+    height: 5px;
+    width: 90%;
+    border-radius: 5px;
+    opacity: 0.8;
+  }
+  .secondary {
+    width: 80%;
+  }
+}

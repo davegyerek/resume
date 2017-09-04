@@ -2,12 +2,14 @@ import React from 'react';
 import {Provider} from 'react-redux'
 import configureStore, {getHistory} from '../configureStore';
 import {ConnectedRouter} from 'react-router-redux'
-import Home from "./Home";
 import registerServiceWorker from "../registerServiceWorker";
-import {Link, Route} from "react-router-dom";
-import Navbar from "./Navbar";
+import {Route} from "react-router-dom";
+import Home from './Home';
 
 import '../../styles/App.scss';
+
+require("font-awesome-webpack");
+
 
 const store = configureStore();
 const history = getHistory();
@@ -17,14 +19,7 @@ export default function () {
         <Provider store={store}>
             <ConnectedRouter history={history}>
                 <div className="app-root">
-                    <Navbar link={[
-                        <Link to="/">Home</Link>,
-                        <Link to="/yolo">Subpage</Link>
-                    ]}/>
-                    <div className="container-fluid">
-                        <Route exact path="/" component={Home}/>
-                        {/*<Route exact path="/yolo" component={TEST}/>*/}
-                    </div>
+                    <Route exact path="/" component={Home}/>
                 </div>
             </ConnectedRouter>
         </Provider>

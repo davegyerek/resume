@@ -13,16 +13,19 @@ function getEntrySources(sources) {
         sources.push('webpack-dev-server/client?http://localhost:8080');
         sources.push('webpack/hot/only-dev-server');
     }
-
     return sources;
 }
 
 module.exports = {
-    entry: getEntrySources(['bootstrap-loader', APP_DIR + '/index.js']),
+    entry: getEntrySources([
+        'font-awesome-webpack!./font-awesome.config.js',
+        'bootstrap-loader',
+        APP_DIR + '/index.js'
+    ]),
     output: {
         publicPath: '/',
         path: BUILD_DIR,
-        filename: `bundle.js`
+        filename: "bundle-[hash].js"
     },
     resolveLoader: {
         moduleExtensions: ['-loader']
@@ -36,43 +39,64 @@ module.exports = {
             },
             {
                 test: /\.s?css$/,
-                loader: ExtractTextPlugin.extract('css!sass')
+                // loader: ExtractTextPlugin.extract('css!sass')
+                use: [{
+                    loader: "style-loader" // creates style nodes from JS strings
+                }, {
+                    loader: "css-loader" // translates CSS into CommonJS
+                }, {
+                    loader: "sass-loader" // compiles Sass to CSS
+                }]
             },
             {
-                test: /\.svg$/,
-                loader: 'external-svg-sprite-loader',
+                test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+                loader: "url-loader?limit=10000&mimetype=application/font-woff"
             },
+            {test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader"},
             {
-                test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
-                exclude: [/ignore/, /elm-stuff/]
-                , loader: 'url?limit=10000&mimetype=application/font-woff'
-            },
-            {
-                test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-                exclude: [/ignore/, /elm-stuff/],
-                loader: 'url?limit=10000&mimetype=application/octet-stream'
-            },
-            {
-                test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-                exclude: [/ignore/, /elm-stuff/],
-                loader: 'file'
-            },
+                test: /\.(jpe?g|png|gif)$/i,
+                loaders: [
+                    'file-loader', {
+                        loader: 'image-webpack-loader',
+                        options: {
+                            gifsicle: {
+                                interlaced: false,
+                            },
+                            optipng: {
+                                optimizationLevel: 7,
+                            },
+                            pngquant: {
+                                quality: '65-90',
+                                speed: 4
+                            },
+                            mozjpeg: {
+                                progressive: true,
+                                quality: 65
+                            },
+                            // Specifying webp here will create a WEBP version of your JPG/PNG images
+                            webp: {
+                                quality: 75
+                            }
+                        }
+                    }
+                ]
+            }
         ]
     },
     plugins: [
+        new HtmlWebpackPlugin({
+            title: 'Balina Bálint - Resume',
+        }),
+        new ExtractTextPlugin('style-[contenthash].css', {
+            allChunks: true
+        }),
         new webpack.ProvidePlugin({
             Promise: 'imports-loader?this=>global!exports-loader?global.Promise!es6-promise',
             fetch: 'imports-loader?this=>global!exports-loader?global.fetch!whatwg-fetch',
             $: "jquery",
             jQuery: "jquery"
         }),
-        new ExtractTextPlugin('style.css', {
-            allChunks: true
-        }),
-        new SvgStorePlugin(),
-        new HtmlWebpackPlugin({
-            title: 'My App',
-        })
+        new SvgStorePlugin()
     ],
     devServer: {
         historyApiFallback: true
