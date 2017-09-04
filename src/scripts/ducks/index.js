@@ -1,1 +1,1 @@
-export {default as fisrt} from './first'
+export {default as personalData} from './personalData'

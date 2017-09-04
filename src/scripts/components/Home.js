@@ -2,7 +2,6 @@ import React from 'react';
 import profilePic from '../../content/proile.jpg'
 
 import '../../styles/Home.scss'
-import moment from 'moment';
 
 export function SocialLink({url, icon}) {
     return (
@@ -11,8 +10,21 @@ export function SocialLink({url, icon}) {
         </li>
     );
 }
+let data = {
 
-export default function ({}) {
+};
+export function Info({icon, content, isCode}) {
+    let current = Object.assign({}, data);
+    current[icon] === undefined && (current[icon] = isCode);
+    data[icon] = isCode;
+    return (
+        <div>
+            <strong><i className={`fa fa-${icon}`}></i></strong>
+            <span className={isCode ? "code" : ""}>&nbsp;&nbsp;&nbsp;{content}</span>
+        </div>
+    );
+}
+export default function ({age, address, email, phone, isCode}) {
     return (
         <header className="header-container">
             <div className="container-fluid header-content">
@@ -25,7 +37,10 @@ export default function ({}) {
                                 <div className="divider"></div>
                                 <div className="info-container">
                                     <ul className="list-unstyled">
-                                        <li><h3>Age</h3>{moment().diff('1994-09-02', 'years')}</li>
+                                        <li><Info title="Location" content={address} isCode={isCode}/></li>
+                                        <li><Info title="Phone" content={phone} isCode={isCode}/></li>
+                                        <li><Info title="Email" content={email} isCode={isCode}/></li>
+                                        <li><Info title="Age" content={age} isCode={isCode}/></li>
                                         <li className="divider secondary"></li>
                                     </ul>
                                 </div>

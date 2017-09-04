@@ -130,3 +130,26 @@ body {
     width: 80%;
   }
 }
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent
+  }
+  50% {
+    border-color: $main-color;
+  }
+}
+
+.info-resume .code {
+  color: $main-color;
+  border-right: .15em solid $main-color;
+  animation: blink-caret .75s step-end infinite;
+}
+.code--deleting {
+  animation: blink-caret .75s step-end infinite, deleting 1.5s steps(20, end)!important;
+}
+
+@keyframes deleting {
+  from { width: 100% }
+  to { width: 0 }
+}
