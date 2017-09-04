@@ -1,4 +1,12 @@
+$main-color: #67B26F;
+$main-color-2: #4ca2cd;
+$secondary-color: #e9eced;
+
 .row {
   padding-right: 0;
   padding-left: 0;
+}
+
+.btn-success {
+  background-color: $main-color;
 }
