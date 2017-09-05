@@ -1,0 +1,187 @@
+@import 'mixins';
+@import 'App';
+@import "generics";
+
+.resume-root {
+  background-color: $secondary-color;
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  img.hidden-md, .resume-root img.hidden-lg {
+    display: inline-block !important;
+  }
+  .btn-primary {
+    display: none;
+  }
+  .info-resume {
+    position: relative;
+    top: 10vh;
+  }
+  .resume-content {
+    position: relative;
+    top: 20vh;
+  }
+
+}
+
+.tech-box {
+  margin-top: 20px;
+  text-align: center;
+  color: $text-color;
+  box-shadow: $box-shadow;
+  border-radius: 10px;
+  padding: 30px 30px 0 30px;
+  h3 {
+    position: relative;
+    top: -70px;
+    padding: 5px 30px;
+    text-transform: uppercase;
+    background-color: $main-color-2;
+    color: $secondary-color;
+    display: inline-block;
+  }
+  .content {
+    text-align: left;
+    position: relative;
+    top: -60px;
+    p {
+      //margin-bottom: 0;
+    }
+  }
+}
+
+.tech-skill {
+  margin-bottom: 30px;
+  img {
+    max-width: 30px;
+    display: inline;
+    margin-right: 10px;
+    margin-bottom: 5px;
+  }
+  h5 {
+    display: inline;
+    font-weight: bolder;
+  }
+  .divider-container {
+    width: 100%;
+    margin: 5px 5px 0 0;
+    border-radius: 5px;
+    height: 5px;
+    background-color: $secondary-color-2;
+  }
+  .divider {
+    margin: 5px 5px 0 0;
+    width: 90%;
+    border-radius: 5px;
+    height: 5px;
+    @include gradient-background($main-color, $main-color-2);
+  }
+}
+
+.time-line {
+  .tech-box {
+    box-shadow: $box-shadow-small;
+  }
+  .center-line {
+    height: 500px;
+    width: 5px;
+    position: absolute;
+    left: calc(50% - 2.5px);
+    background-color: $secondary-color-2;
+  }
+  .time-line-pointer {
+    @include rotate-deg(45deg);
+    $size: 30px;
+    width: $size;
+    height: $size;
+    background-color: $secondary-color;
+    position: absolute;
+    top: -25px;
+    right: -32px;
+    span {
+      $size: 15px;
+      width: $size;
+      height: $size;
+      display: block;
+      position: relative;
+      top: -12.5px;
+      left: calc(50% + 12.5px);
+      border-radius: $size;
+      @include gradient-background($main-color, $main-color-2);
+    }
+  }
+
+  .right {
+    .time-line-pointer {
+      top: -25px;
+      left: -32px;
+      span {
+        top: unset;
+        bottom: -26px;
+        left: -12px;
+        right: unset;
+      }
+    }
+  }
+
+  .time-line-event {
+    img {
+      max-width: 60px;
+      display: inline-block;
+    }
+    h4 {
+      display: inline;
+      margin-left: 10px;
+      font-weight: bolder;
+    }
+    .description {
+      margin-top: 10px;
+    }
+  }
+  .right {
+    padding-top: 50px;
+  }
+}
+
+@media (max-width: 991px) {
+  .tech-box {
+    margin-top: 50px !important;
+  }
+}
+
+.info-resume > img {
+  max-width: 125px;
+  position: absolute;
+  top: 30px;
+  right: 15px;
+}
+
+.info-resume.bottom {
+  position: absolute;
+  bottom: 10vh;
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent
+  }
+  50% {
+    border-color: $main-color;
+  }
+}
+
+.info-resume .code {
+  color: $main-color;
+  border-right: .15em solid $main-color;
+  animation: blink-caret .75s step-end infinite;
+}
+
+.btn-success {
+  margin-bottom: 10px;
+}
+
+h2 {
+  color: $main-color;
+  font-weight: bolder;
+}

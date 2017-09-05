@@ -1,7 +1,10 @@
 $main-color: #67B26F;
 $main-color-2: #4ca2cd;
 $secondary-color: #e9eced;
+$secondary-color-2: #bcbcbd;
 $box-shadow: 20px 20px 50px 20px rgba(100, 100, 100, 0.1);
+$box-shadow-small: 5px 10px 40px 20px rgba(100, 100, 100, 0.1);
+$text-color: #333333;
 
 .row {
   padding-right: 0;
@@ -10,4 +13,8 @@ $box-shadow: 20px 20px 50px 20px rgba(100, 100, 100, 0.1);
 
 .btn-success {
   background-color: $main-color;
+}
+
+.btn-primary {
+  background-color: $main-color-2;
 }

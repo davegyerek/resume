@@ -1,33 +1,12 @@
 import React from 'react';
 
 import profilePic from '../../content/proile.jpg'
-import '../../styles/Home.scss'
-import {Link} from "react-router-dom";
+import '../../styles/Landing.scss'
+import MainInfoBoxContainer from "../containers/MainInfoContainer";
 
-export function SocialLink({url, icon}) {
-    return (
-        <li>
-            <a href={url} target="_blank"><i className={`fa fa-${icon}`}></i></a>
-        </li>
-    );
-}
 
-let data = {};
 
-export function Info({title, content, isCode}) {
-    let current = Object.assign({}, data);
-    current[title] === undefined && (current[title] = isCode);
-    data[title] = isCode;
-    return (
-        <div>
-            <strong>{title}</strong>
-            <span className={isCode ? "code" : ""}>&nbsp;&nbsp;&nbsp;{content}</span>
-        </div>
-    );
-}
-
-export default function ({scrollTop, info, isCode, isDone, onReadMoreClick}) {
-    const {age, address, email, phone} = info;
+export default function ({scrollTop, isDone, onReadMoreClick}) {
     return (
         <div>
             <header className={`content-container${isDone ? " done" : ""}`}>
@@ -37,40 +16,8 @@ export default function ({scrollTop, info, isCode, isDone, onReadMoreClick}) {
                     <div className="container">
                         <div className="row">
                             <div className="col-md-12 title-center-content">
-                                <div className="col-md-6 info-resume">
-                                    <h1>Balina Bálint</h1>
-                                    <h4>Fullstack Web & CrossPlatform Mobile Developer</h4>
-                                    <img className="img img-responsive img-circle hidden-md hidden-lg pull-right"
-                                         src={profilePic}
-                                         alt="Profile Picture"/>
-                                    <div className="info-container">
-                                        <ul className="list-unstyled">
-                                            <li><Info title="Location" content={address} isCode={isCode}/></li>
-                                            <li><Info title="Email" content={email} isCode={isCode}/></li>
-                                            <li><Info title="Phone" content={phone} isCode={isCode}/></li>
-                                            <li><Info title="Age" content={age} isCode={isCode}/></li>
-                                            <li className="divider secondary"></li>
-                                            <ul className="list-unstyled">
-                                                <SocialLink
-                                                    url="https://stackoverflow.com/users/5493460/b%C3%A1lint-balina"
-                                                    icon="stack-overflow"/>
-                                                <SocialLink url="https://github.com/balinabbb" icon="github"/>
-                                                <SocialLink
-                                                    url="https://www.linkedin.com/in/balina-b%C3%A1lint-98a2b7142/"
-                                                    icon="linkedin"/>
-                                            </ul>
-                                        </ul>
-                                        <button className="btn btn-success"><i
-                                            className="fa fa-cloud-download"></i>&nbsp;
-                                            Download CV
-                                        </button>
-                                        <div className="btn btn-lg btn-primary">
-                                            <Link to="resume">
-                                                <i className="fa fa-angle-down"></i>&nbsp;
-                                                Would like to read more?
-                                            </Link>
-                                        </div>
-                                    </div>
+                                <div className="col-md-6 p-l-0 p-r-0">
+                                    <MainInfoBoxContainer/>
                                 </div>
                                 <div className="col-md-5 title-resume">
                                     <span className="visible-md visible-lg">Software Developer</span>

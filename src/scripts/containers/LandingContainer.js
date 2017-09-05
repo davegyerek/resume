@@ -4,8 +4,6 @@ import {startReadMore} from "../ducks/readMore";
 
 const mapStateToProps = state => ({
     scrollTop: state.scrollTop,
-    info: state.personalData,
-    isCode: state.personalData.isCode,
     isDone: state.readMore
 });
 
