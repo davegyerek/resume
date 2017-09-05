@@ -1,0 +1,27 @@
+@import 'mixins';
+@import 'App';
+
+body {
+  //@include gradient-background($main-color, $main-color-2);
+  background-color: $secondary-color;
+}
+
+.not-found {
+  width: 100%;
+  height: 100vh;
+  padding: 0;
+  background-color: $secondary-color;
+}
+
+.not-found .box {
+  box-shadow: $box-shadow;
+  position: absolute;
+  top: 40vh;
+  background: none;
+  border-radius: 10px;
+  border: none;
+  padding: 40px;
+  h2 {
+    margin-top: 0;
+  }
+}

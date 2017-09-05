@@ -2,6 +2,7 @@ import React from 'react';
 
 import profilePic from '../../content/proile.jpg'
 import '../../styles/Home.scss'
+import {Link} from "react-router-dom";
 
 export function SocialLink({url, icon}) {
     return (
@@ -32,7 +33,7 @@ export default function ({scrollTop, info, isCode, isDone, onReadMoreClick}) {
             <header className={`content-container${isDone ? " done" : ""}`}>
                 <div className="container-fluid header-content">
                     <span className="trapeze-bg"
-                          style={{width: `${65 + scrollTop/12.5}%`}}></span>
+                          style={{width: `${65 + scrollTop / 12.5}%`}}></span>
                     <div className="container">
                         <div className="row">
                             <div className="col-md-12 title-center-content">
@@ -63,6 +64,12 @@ export default function ({scrollTop, info, isCode, isDone, onReadMoreClick}) {
                                             className="fa fa-cloud-download"></i>&nbsp;
                                             Download CV
                                         </button>
+                                        <div className="btn btn-lg btn-primary">
+                                            <Link to="resume">
+                                                <i className="fa fa-angle-down"></i>&nbsp;
+                                                Would like to read more?
+                                            </Link>
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="col-md-5 title-resume">
@@ -79,8 +86,6 @@ export default function ({scrollTop, info, isCode, isDone, onReadMoreClick}) {
                     </div>
                 </div>
             </header>
-            <div style={{height: "800px"}}>
-            </div>
         </div>
     );
 }
