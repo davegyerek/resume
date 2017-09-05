@@ -16,7 +16,7 @@ export default function (state = {
                 address: action.address,
                 age: moment().diff('1994-09-02', 'years'),
                 email: "balinabbb@gmail.com",
-                phone: "+3620 491 93 24",
+                phone: "+36 20 491 93 24",
                 isCode: false
             };
         case REQUEST_ADDRESS:

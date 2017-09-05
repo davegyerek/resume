@@ -124,11 +124,12 @@ body {
   }
   ul {
     padding-top: 10px;
+    margin-bottom: 0;
     ul {
       li {
         display: inline;
         float: right;
-        margin: 10px;
+        margin: 0px 15px 0 0;
         a {
           opacity: 0.8;
           font-size: x-large;
@@ -167,6 +168,10 @@ body {
   color: $main-color;
   border-right: .15em solid $main-color;
   animation: blink-caret .75s step-end infinite;
+}
+
+.btn-success {
+  margin-bottom: 10px;
 }
 
 .btn-primary {
