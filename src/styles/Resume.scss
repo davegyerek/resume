@@ -11,7 +11,7 @@
   img.hidden-md, .resume-root img.hidden-lg {
     display: inline-block !important;
   }
-  .btn-primary {
+  .learn-more-button {
     display: none;
   }
   .info-resume {
@@ -22,7 +22,9 @@
     position: relative;
     top: 20vh;
   }
-
+  .btn-primary:hover {
+    color:$main-color-2;
+  }
 }
 
 .tech-box {
@@ -78,17 +80,22 @@
     @include gradient-background($main-color, $main-color-2);
   }
 }
-
+@media (max-width: 991px) {
+  .center-line, .time-line-pointer, .time-line-pointer>span {
+    display: none;
+  }
+}
 .time-line {
   .tech-box {
     box-shadow: $box-shadow-small;
   }
   .center-line {
-    height: 500px;
+    height: 1100px;
     width: 5px;
     position: absolute;
     left: calc(50% - 2.5px);
     background-color: $secondary-color-2;
+    border-radius: 2.5px;
   }
   .time-line-pointer {
     @include rotate-deg(45deg);
@@ -138,6 +145,14 @@
     .description {
       margin-top: 10px;
     }
+    .years {
+      margin-top: 0;
+      float: left;
+      background-color: $main-color;
+      color: $secondary-color;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
   }
   .right {
     padding-top: 50px;
@@ -184,4 +199,8 @@
 h2 {
   color: $main-color;
   font-weight: bolder;
+}
+
+.show-more-button {
+  width: 100%;
 }
