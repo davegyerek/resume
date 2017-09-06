@@ -1,0 +1,56 @@
+{
+  "about": {
+    "greeting": "Hello!"
+  },
+  "timeline": [
+    {
+      "company": "OBUDA UNIVERSITY",
+      "title": "BA in Computer Science",
+      "description": "Software engineering, software technology, information technology, science",
+      "years": "2014 Sep - 2018 Jun",
+      "logo": "oe"
+    },
+    {
+      "company": "VONALKÓD RENDSZERHÁZ KFT.",
+      "title": "Backend Developer",
+      "description": "ASP.NET backend, MS-SQL database, bootstrap frontend of industrial systems",
+      "years": "2015 Okt - 2016 Mar",
+      "logo": "vonalkod"
+    },
+    {
+      "company": "ZENHEADS KFT.",
+      "title": "Mobile Developer",
+      "description": "Development of connected cross platform mobile applications with Xamarin and MvvmCross",
+      "years": "2016 Mar",
+      "logo": "zenheads"
+    },
+    {
+      "company": "CLOUDCODE HUNGARY",
+      "title": "Fullstack Developer",
+      "description": "Business development with Django REST services and React-Redux frontend",
+      "years": "2016 Sep",
+      "logo": "cloudcode"
+    },
+    {
+      "company": "GOLDSPRINT GEAR",
+      "title": "IoT Developer",
+      "description": "Raspberry Pi 3, PCL design, Django Rest service for Goldsprint race measurement",
+      "years": "2016 Jun",
+      "logo": "goldsprint"
+    },
+    {
+      "company": "MERKIT CONSULTING KFT.",
+      "title": "Test Engineer",
+      "description": "Selenium based test automation of mobile apps and websites",
+      "years": "2017 Mar",
+      "logo": "merkit"
+    },
+    {
+      "company": "SOTER-LINE OKTATÁSI KÖZPONT",
+      "title": "Software Lecturer",
+      "description": "Teach OOP, C# for a small group in Technical And Further Education",
+      "years": "2017 May - 2017 Okt",
+      "logo": "soter"
+    }
+  ]
+}

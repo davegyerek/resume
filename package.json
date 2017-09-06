@@ -55,6 +55,7 @@
     "http-server": "^0.10.0",
     "image-webpack-loader": "^3.4.1",
     "imports-loader": "^0.7.1",
+    "json-loader": "^0.5.7",
     "jsx-loader": "^0.13.2",
     "node-sass": "^4.5.3",
     "react-hot-loader": "^3.0.0-beta.7",

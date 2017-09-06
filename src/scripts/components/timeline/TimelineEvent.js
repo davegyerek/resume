@@ -1,5 +1,5 @@
 import React from 'react';
-import TechBox from "../common/TechBox";
+import TechBox from "../common/InfoBox";
 
 export default function ({company, title, description, logo, years, right}) {
     return (
@@ -10,7 +10,7 @@ export default function ({company, title, description, logo, years, right}) {
                     <img src={logo} className="img img-responsive"/>
                     <h4>{title}</h4>
                     <div className="description">
-                        {description}
+                        <p>{description}</p>
                     </div>
                     <div className="years">{years}</div>
                 </div>

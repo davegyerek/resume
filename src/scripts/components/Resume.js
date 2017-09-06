@@ -4,7 +4,8 @@ import MainInfoBoxContainer from "../containers/MainInfoContainer"
 
 
 import SkillsContainer from "../containers/SkillsContainer";
-import Timeline from "./timeline/Timeline";
+import Timeline from "./timeline";
+import Details from "./details";
 import Title from "./common/Title";
 
 
@@ -31,8 +32,9 @@ export default function ({}) {
                     </div>
                 </div>
                 <div className="row resume-content">
-                    <ResumePart title="Skills" content={<SkillsContainer/>}/>
+                    {/*<ResumePart title="Skills" content={<SkillsContainer/>}/>*/}
                     <ResumePart title="Timeline" content={<Timeline/>}/>
+                    <ResumePart title="Details" content={<Details/>}/>
                 </div>
             </div>
         </div>

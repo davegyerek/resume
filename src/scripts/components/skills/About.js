@@ -1,10 +1,10 @@
 import React from 'react';
 import moment from "moment";
-import TechBox from "../common/TechBox";
+import InfoBox from "../common/InfoBox";
 
 export default function ({aboutExpanded, techExpanded, onCloseClick, onAboutExpandClick}) {
     return (
-        <TechBox title="about me" size={aboutExpanded ? 12 : (techExpanded ? 8 : 7)}
+        <InfoBox title="about me" size={aboutExpanded ? 12 : (techExpanded ? 8 : 7)}
                  offset={techExpanded ? 2 : 0}
                  content={
                      <div>

@@ -1,6 +1,6 @@
 import React from 'react';
-import TechBox from "../common/TechBox";
-import TechSkill from "../common/TechSkill";
+import InfoBox from "../common/InfoBox";
+import TechSkill from "./TechSkill";
 
 import xamarin from "../../../content/tech-logos/xamarin.png";
 import django from "../../../content/tech-logos/django.png";
@@ -9,7 +9,7 @@ import appium from "../../../content/tech-logos/appium.png";
 
 export default function ({aboutExpanded, techExpanded, onCloseClick, onTechExpandClick}) {
     return (
-        <TechBox title="tech" size={techExpanded ? 12 : (aboutExpanded ? 6 : 5)} offset={aboutExpanded ? 3 : 0}
+        <InfoBox title="tech" size={techExpanded ? 12 : (aboutExpanded ? 6 : 5)} offset={aboutExpanded ? 3 : 0}
                  content={
                      <div>
                          {techExpanded ?
