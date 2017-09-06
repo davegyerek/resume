@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
-import {SkillsResumePart} from "../components/Resume";
 import {expandAbout, expandTech, close} from "../ducks/expand";
+import Skills from '../components/skills'
 
 const mapStateToProps = state => ({
     ...state.expand
@@ -27,4 +27,4 @@ function onCloseClick() {
 export default connect(
     mapStateToProps,
     {onTechExpandClick, onAboutExpandClick, onCloseClick}
-)(SkillsResumePart);
+)(Skills);
