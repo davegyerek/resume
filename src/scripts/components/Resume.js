@@ -32,9 +32,9 @@ export default function ({}) {
                     </div>
                 </div>
                 <div className="row resume-content">
-                    {/*<ResumePart title="Skills" content={<SkillsContainer/>}/>*/}
+                    <ResumePart title="Skills" content={<SkillsContainer/>}/>
                     <ResumePart title="Timeline" content={<Timeline/>}/>
-                    <ResumePart title="Details" content={<Details/>}/>
+                    {/*<ResumePart title="Details" content={<Details/>}/>*/}
                 </div>
             </div>
         </div>
