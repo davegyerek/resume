@@ -1,0 +1,111 @@
+{
+  "id": "ad",
+  "personal": {
+    "name": "Andó Dávid",
+    "position": "Fullstack Web Developer",
+    "fancyTitle": "software developer",
+    "address": "Békéscsaba, Szabó Pál tér 1. 3/8.",
+    "email": "andodavid95@gmail.com",
+    "phone": "+36 20 390 33 74",
+    "birth": "1995-08-14",
+    "links": [
+      {
+        "icon": "stack-overflow",
+        "url": "https://stackoverflow.com/users/8393806/d%C3%A1vid-and%C3%B3"
+      },
+      {
+        "icon": "github",
+        "url": "https://github.com/davegyerek"
+      },
+      {
+        "icon": "linkedin",
+        "url": "https://www.linkedin.com/in/david-ando-8b201b149/"
+      }
+    ]
+  },
+  "about": {
+    "greeting": "Hello!",
+    "short": "My name is Andó Dávid. A junior developer, hiker, nature lover, and still a university student.\nI have only half a year experience behind me, but worked with multiple projects, solved various problems. \nI am ready to learn new things every day, and improve my knowledge. I work with a small team, and each month we deliver the best quality of product.",
+    "extended": "My name is Andó Dávid. A junior developer, hiker, and still a university student.\nI have only half a year experience behind me, but worked with multiple projects, solved various problems. \nI am ready to learn new things every day, and improve my knowledge. I work with a small team, and each month we deliver the best quality of product."
+  },
+  "tech": {
+    "short": [
+      {
+        "title": "Django - Backend",
+        "icon": "django",
+        "percent": 65
+      },
+      {
+        "title": "React-Redux - Frontend",
+        "icon": "react",
+        "percent": 50
+      },
+      {
+        "title": "Appium - UI Testautomation",
+        "icon": "appium",
+        "percent": 70
+      },
+      {
+        "title": "Bootstrap framework",
+        "icon": "bootstrap",
+        "percent": 90
+      },
+      {
+        "title": "jQuery - JavaScript library",
+        "icon": "jquery",
+        "percent": 90
+      },
+    ],
+    "extended": {
+      "languages": [
+        "C#, Python, Java",
+        "Javascript, Typescript, ES6",
+        "Html5, CSS3, SASS, LESS"
+      ],
+      "technologies": [
+        "Git, Git Bash, Webhooks",
+        "Windows Forms, WPF, ASP.NET",
+        "Bootstrap, jQuery, MS-SQL",
+        "React-Redux, React-Router, Webpack",
+        "Django, Uwsgi, Nginx",
+        "Postgres SQL, SQLite",
+        "Appium, Selenium"
+      ],
+      "ides": [
+        "Visual Studio, Visual Studio Code",
+        "Atom, Brackets, Notepad++",
+        "Pycharm, IntelliJ"
+      ]
+    }
+  },
+  "timeline": [
+    {
+      "company": "OBUDA UNIVERSITY",
+      "title": "BA in Computer Science",
+      "description": "Software engineering, software technology, information technology, science",
+      "years": "2014 Sep - 2020 Jan",
+      "logo": "oe"
+    },
+    {
+      "company": "CLOUDCODE HUNGARY",
+      "title": "Fullstack Developer",
+      "description": "Business development with Django REST services and React-Redux frontend",
+      "years": "2017 Mar",
+      "logo": "cloudcode"
+    },
+    {
+      "company": "GOLDSPRINT GEAR",
+      "title": "Fullstack Developer",
+      "description": "Django Rest service for Goldsprint race measurement",
+      "years": "2017 Mar",
+      "logo": "goldsprint"
+    },
+    {
+      "company": "MERKIT CONSULTING KFT.",
+      "title": "Test Engineer",
+      "description": "Selenium based test automation of mobile apps and websites",
+      "years": "2017 Mar",
+      "logo": "merkit"
+    }
+  ]
+}
