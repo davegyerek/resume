@@ -1,0 +1,132 @@
+{
+  "id": "bb",
+  "personal": {
+    "name": "Balina Bálint",
+    "position": "Fullstack Web && CrossPlatform Mobile Developer",
+    "fancyTitle": "software developer",
+    "address": "Budapest, Bokréta utca 15",
+    "email": "balinabbb@gmail.com",
+    "phone": "+36 20 491 93 24",
+    "birth": "1994-09-02",
+    "links": [
+      {
+        "icon": "stack-overflow",
+        "url": "https://stackoverflow.com/users/5493460/b%C3%A1lint-balina"
+      },
+      {
+        "icon": "github",
+        "url": "https://github.com/balinabbb"
+      },
+      {
+        "icon": "linkedin",
+        "url": "https://www.linkedin.com/in/balina-b%C3%A1lint-98a2b7142/"
+      }
+    ]
+  },
+  "about": {
+    "greeting": "Hello!",
+    "short": "My name is Balina Bálint. A real enthusiast developer, biker, beerpong lover, and engaged to a beautiful lady.\nWith only 3 years of experience behind me I work with multiple remarkable partners. I am leader a small team, and each month I deliver the best quality of product.",
+    "extended": "My name is Balina Bálint. A real enthusiast developer, biker, beerpong lover, and engaged to a beautiful lady.\nWith only 3 years of experience behind me I work with multiple remarkable partners. I am leader a small team, and each month I deliver the best quality of product.\nLorem ipsum dolor sit amet"
+  },
+  "tech": {
+    "short": [
+      {
+        "title": "Xamarin - Cross platform mobile",
+        "icon": "xamarin",
+        "percent": 99
+      },
+      {
+        "title": "Django - Backend",
+        "icon": "django",
+        "percent": 85
+      },
+      {
+        "title": "React-Redux - Frontend",
+        "icon": "react",
+        "percent": 80
+      },
+      {
+        "title": "Appium - UI Testautomation",
+        "icon": "appium",
+        "percent": 70
+      }
+    ],
+    "extended": {
+      "languages": [
+        "C#",
+        "Javascript, Typescript, ES6",
+        "Python",
+        "Html5, CSS3, SASS, LESS",
+        "Java, C, C++, Php"
+      ],
+      "technologies": [
+        "Git, Git Bash, Webhooks",
+        "Xamarin, MvvmCross",
+        "Windows Forms, WPF, ASP.NET",
+        "EF6, EF Core, MS-SQL",
+        "React-Redux, React-Router, Webpack",
+        "Django, Uwsgi, Nginx, Pytest",
+        "Postgres SQL, SQLite",
+        "Appium, Selenium"
+      ],
+      "ides": [
+        "Visual Studio, Visual Studio Code",
+        "XCode, Xamarin Studio",
+        "Atom, Sublimetext, Notepad++",
+        "Pycharm",
+        "IntelliJ, CLion, PhpStorm"
+      ]
+    }
+  },
+  "timeline": [
+    {
+      "company": "OBUDA UNIVERSITY",
+      "title": "BA in Computer Science",
+      "description": "Software engineering, software technology, information technology, science",
+      "years": "2014 Sep - 2018 Jun",
+      "logo": "oe"
+    },
+    {
+      "company": "VONALKÓD RENDSZERHÁZ KFT.",
+      "title": "Backend Developer",
+      "description": "ASP.NET backend, MS-SQL database, bootstrap frontend of industrial systems",
+      "years": "2015 Okt - 2016 Mar",
+      "logo": "vonalkod"
+    },
+    {
+      "company": "ZENHEADS KFT.",
+      "title": "Mobile Developer",
+      "description": "Development of connected cross platform mobile applications with Xamarin and MvvmCross",
+      "years": "2016 Mar",
+      "logo": "zenheads"
+    },
+    {
+      "company": "CLOUDCODE HUNGARY",
+      "title": "Fullstack Developer",
+      "description": "Business development with Django REST services and React-Redux frontend",
+      "years": "2016 Sep",
+      "logo": "cloudcode"
+    },
+    {
+      "company": "GOLDSPRINT GEAR",
+      "title": "IoT Developer",
+      "description": "Raspberry Pi 3, PCL design, Django Rest service for Goldsprint race measurement",
+      "years": "2016 Jun",
+      "logo": "goldsprint"
+    },
+    {
+      "company": "MERKIT CONSULTING KFT.",
+      "title": "Test Engineer",
+      "description": "Selenium based test automation of mobile apps and websites",
+      "years": "2017 Mar",
+      "logo": "merkit"
+    },
+    {
+      "company": "SOTER-LINE OKTATÁSI KÖZPONT",
+      "title": "Software Lecturer",
+      "description": "Teach OOP, C# for a small group in Technical And Further Education",
+      "years": "2017 May - 2017 Okt",
+      "logo": "soter"
+    }
+  ]
+}

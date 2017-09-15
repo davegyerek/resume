@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default function ({img, text, percent}) {
+export default function ({icon, title, percent}) {
     return (
         <li className="tech-skill">
-            <img className="img img-responsive" src={img}/>
-            <h5>{text}
+            <img className="img img-responsive" src={icon}/>
+            <h5>{title}
                 <small className="m-t-10 text-muted pull-right">{percent}&nbsp;%</small>
             </h5>
             <div className="divider-container">

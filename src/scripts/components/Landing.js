@@ -1,12 +1,15 @@
 import React from 'react';
-
-import profilePic from '../../content/proile.jpg'
+import {connect} from 'react-redux';
 import '../../styles/Landing.scss'
-import MainInfoBoxContainer from "../containers/MainInfoContainer";
+import MainInfoBox from "./maininfo/index";
+import {importAllImage} from "../common";
+import data from '../dataSource';
+
+let profilePics = {};
+importAllImage(require.context('../../content/profile-pictures', false, /\.jpe?g$/), profilePics, "jpg");
 
 
-
-export default function ({scrollTop, isDone, onReadMoreClick}) {
+export function LandingContent({scrollTop, isDone}) {
     return (
         <div>
             <header className={`content-container${isDone ? " done" : ""}`}>
@@ -17,14 +20,14 @@ export default function ({scrollTop, isDone, onReadMoreClick}) {
                         <div className="row">
                             <div className="col-md-12 title-center-content">
                                 <div className="col-md-6 p-l-0 p-r-0">
-                                    <MainInfoBoxContainer/>
+                                    <MainInfoBox/>
                                 </div>
                                 <div className="col-md-5 title-resume">
-                                    <span className="visible-md visible-lg">Software Developer</span>
+                                    <span className="visible-md visible-lg">{data.personal.fancyTitle}</span>
                                     <div className="text-center">
                                         <img
                                             className="img img-responsive img-circle visible-md-inline visible-lg-inline"
-                                            src={profilePic}
+                                            src={profilePics[data.id]}
                                             alt="Profile Picture"/>
                                     </div>
                                 </div>
@@ -36,3 +39,13 @@ export default function ({scrollTop, isDone, onReadMoreClick}) {
         </div>
     );
 }
+
+const mapStateToProps = state => ({
+    scrollTop: state.scrollTop,
+    isDone: state.readMore
+});
+
+export default connect(
+    mapStateToProps,
+    {}
+)(LandingContent);

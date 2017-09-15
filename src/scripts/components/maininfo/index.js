@@ -1,17 +1,24 @@
 import React from 'react';
+import {connect} from 'react-redux';
+
 import Info from "./Info";
 import SocialLink from "../common/SocialLink";
 import {Link} from "react-router-dom";
-import profilePic from '../../../content/proile.jpg'
+import data from '../../dataSource';
+import {importAllImage} from "../../common";
 
-export default function ({info, isCode}) {
+let profilePics = {};
+importAllImage(require.context('../../../content/profile-pictures', false, /\.jpe?g$/), profilePics);
+
+export function MainInfoBox({info, isCode}) {
     const {age, address, email, phone} = info;
+    const {name, position, links} = data.personal;
     return (
         <div className="info-resume">
-            <h1>Balina Bálint</h1>
-            <h4>Fullstack Web & CrossPlatform Mobile Developer</h4>
+            <h1>{name}</h1>
+            <h4>{position}</h4>
             <img className="img img-responsive img-circle hidden-md hidden-lg"
-                 src={profilePic}
+                 src={profilePics[data.id]}
                  alt="Profile Picture"/>
             <div className="info-container">
                 <ul className="list-unstyled">
@@ -21,13 +28,7 @@ export default function ({info, isCode}) {
                     <li><Info title="Age" content={age} isCode={isCode}/></li>
                     <li className="divider secondary"></li>
                     <ul className="list-unstyled">
-                        <SocialLink
-                            url="https://stackoverflow.com/users/5493460/b%C3%A1lint-balina"
-                            icon="stack-overflow"/>
-                        <SocialLink url="https://github.com/balinabbb" icon="github"/>
-                        <SocialLink
-                            url="https://www.linkedin.com/in/balina-b%C3%A1lint-98a2b7142/"
-                            icon="linkedin"/>
+                        {links.map((x,i) => <SocialLink key={i} {...x}/>)}
                     </ul>
                 </ul>
                 <button className="btn btn-success"><i
@@ -44,3 +45,13 @@ export default function ({info, isCode}) {
         </div>
     );
 }
+
+
+const mapStateToProps = state => ({
+    info: state.personalData,
+    isCode: state.personalData.isCode,
+});
+
+export default connect(
+    mapStateToProps
+)(MainInfoBox);

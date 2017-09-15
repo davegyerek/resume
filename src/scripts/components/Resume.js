@@ -1,12 +1,12 @@
-import React from 'react';
 import "../../styles/Resume.scss"
-import MainInfoBoxContainer from "../containers/MainInfoContainer"
+import React from 'react';
+import MainInfoBox from "../components/maininfo"
 
 
-import SkillsContainer from "../containers/SkillsContainer";
+import Skills from "../components/skills";
 import Timeline from "./timeline";
-import Details from "./details";
 import Title from "./common/Title";
+import {connect} from "react-redux";
 
 
 export function ResumePart({title, content}) {
@@ -22,21 +22,28 @@ export function ResumePart({title, content}) {
     );
 }
 
-export default function ({}) {
+export function Resume({}) {
     return (
         <div className="resume-root">
             <div className="container-fluid">
                 <div className="row">
                     <div className="container">
-                        <MainInfoBoxContainer/>
+                        <MainInfoBox/>
                     </div>
                 </div>
                 <div className="row resume-content">
-                    <ResumePart title="Skills" content={<SkillsContainer/>}/>
+                    <ResumePart title="Skills" content={<Skills/>}/>
                     <ResumePart title="Timeline" content={<Timeline/>}/>
-                    {/*<ResumePart title="Details" content={<Details/>}/>*/}
                 </div>
             </div>
         </div>
     );
 }
+
+const mapStateToProps = state => ({
+
+});
+export default connect(
+    mapStateToProps,
+    {}
+)(Resume);

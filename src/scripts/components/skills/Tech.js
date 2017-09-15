@@ -1,11 +1,11 @@
 import React from 'react';
 import InfoBox from "../common/InfoBox";
 import TechSkill from "./TechSkill";
+import {importAllImage} from "../../common";
+import data from '../../dataSource';
 
-import xamarin from "../../../content/tech-logos/xamarin.png";
-import django from "../../../content/tech-logos/django.png";
-import react from "../../../content/tech-logos/react.png";
-import appium from "../../../content/tech-logos/appium.png";
+let logos = {};
+importAllImage(require.context('../../../content/tech-logos', false, /\.png$/), logos);
 
 export default function ({aboutExpanded, techExpanded, onCloseClick, onTechExpandClick}) {
     return (
@@ -17,40 +17,24 @@ export default function ({aboutExpanded, techExpanded, onCloseClick, onTechExpan
                                  <div className="col-md-4">
                                      <h4><i className="fa fa-code"></i>&nbsp;Languages</h4>
                                      <ul className="list-unstyled">
-                                         <li>C# 7.0</li>
-                                         <li>Javascript, ES6</li>
-                                         <li>Python 3</li>
-                                         <li>Html5, CSS3, SASS, LESS</li>
-                                         <li>Java, C, C++</li>
+                                         {data.tech.extended.languages.map((x,i) => <li key={i}>{x}</li>)}
                                      </ul>
                                  </div>
                                  <div className="col-md-4">
                                      <h4><i className="fa fa-wrench"></i>&nbsp;Technologies</h4>
                                      <ul className="list-unstyled">
-                                         <li>Git, Git Bash, Webhooks</li>
-                                         <li>Xamarin, MvvmCross</li>
-                                         <li>Windows Forms, WPF, ASP.NET, EF6, MS-SQL</li>
-                                         <li>React-Redux, React-Router, Webpack</li>
-                                         <li>Django, Uwsgi, Nginx, Pytest</li>
-                                         <li>Postgres SQL, SQLite</li>
-                                         <li>Appium, Selenium</li>
+                                         {data.tech.extended.technologies.map((x,i) => <li key={i}>{x}</li>)}
                                      </ul>
                                  </div>
                                  <div className="col-md-4">
                                      <h4><i className="fa fa-pencil"></i>&nbsp;IDEs</h4>
                                      <ul className="list-unstyled">
-                                         <li>Visual Studio, XCode</li>
-                                         <li>Atom, Sublimetext, Notepad++</li>
-                                         <li>Pycharm</li>
-                                         <li>IntelliJ, CLion</li>
+                                         {data.tech.extended.ides.map((x,i) => <li key={i}>{x}</li>)}
                                      </ul>
                                  </div>
                              </div> :
                              <ul className="list-unstyled">
-                                 <TechSkill img={xamarin} text="Xamarin - Cross platform mobile" percent="99"/>
-                                 <TechSkill img={django} text="Django - Backend" percent="85"/>
-                                 <TechSkill img={react} text="React-Redux - Frontend" percent="80"/>
-                                 <TechSkill img={appium} text="Appium - UI Testautomation" percent="70"/>
+                                 {data.tech.short.map((x,i) => <TechSkill key={i} {...x} icon={logos[x.icon]}/>)}
                              </ul>
                          }
                          {techExpanded ?

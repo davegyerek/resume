@@ -7,12 +7,11 @@ import {Route, Switch, Redirect} from 'react-router-dom';
 import '../../styles/App.scss';
 import api from "../api";
 import {receiveAddress, requestAddress} from "../ducks/personalData";
-import {initialize} from "../ducks/scrollTop";
-import LandingContainer from "../containers/LandingContainer";
-import ResumeContainer from "../containers/ResumeContainer";
 import NotFound from "./NotFound";
-
-require("font-awesome-webpack");
+import Landing from "./Landing";
+import Resume from "./Resume";
+import data from '../dataSource';
+import 'font-awesome-webpack';
 
 
 const store = configureStore();
@@ -20,11 +19,10 @@ const history = getHistory();
 
 setTimeout(function () {
     store.dispatch(requestAddress());
-    api.getLocation("Budapest, Bokréta utca 15", result => {
+    api.getLocation(data.personal.address, result => {
         store.dispatch(receiveAddress(result.predictions[0].description))
     });
 }, 1500);
-initialize(store.dispatch);
 
 
 export default function () {
@@ -32,8 +30,8 @@ export default function () {
         <Provider store={store}>
             <ConnectedRouter history={history}>
                 <Switch>
-                    <Route exact path="/landing" component={LandingContainer}/>
-                    <Route exact path="/resume" component={ResumeContainer}/>
+                    <Route exact path="/landing" component={Landing}/>
+                    <Route exact path="/resume" component={Resume}/>
                     <Redirect exact from="/" to="landing"/>
                     <Route component={NotFound}/>
                 </Switch>
